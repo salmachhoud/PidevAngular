@@ -1,0 +1,81 @@
+
+<div class="container">
+<div style="float:left;width:40%">
+        <!--   
+        <tr>   el recherche hethi s7i7a na7itha bech 3malt capture lel cv
+            <td>Search <span class="glyphicon glyphicon-search"></span></td>
+            <td><input class="form-control" ng-model="q" placeholder="Search for..."></td>
+            
+          
+        </tr>-->
+    
+   <!--     <tr>
+        <td><button type="button" class="btn btn-success btn-xs" ng-click="get()">
+                                        <span class="glyphicon glyphicon-search"></span> Search
+                                    </button>
+				</td>
+        </tr>-->
+    <h3><mark>Tasks List</mark></h3>
+    <ul class="list-group">
+        <li class="list-group-item" ng-click="selectTask(t,$index)" style="cursor:hand" ng-repeat="t in tasks | filter:q">
+		<span class=" glyphicon glyphicon-ok"></span>
+		{{t.name}}
+		</li>
+    </ul>
+  
+</div>
+<div style="float:right;width:50%;margin-top:50px">
+    <table class="table table-inverse">
+        <tr>
+            <td>Id <span class=" glyphicon glyphicon-asterisk"></span> </td>
+                <td ng-if="selectIndex==null">
+            <input type="number" class="form-control" ng-model="TaskFrom.id" ng-keyup="changed($event)"></td>
+            <td ng-if="selectIndex!=null">{{TaskFrom.id}}</td>
+        </tr>
+        
+        
+        <tr>
+            <td>StartDate <span class=" glyphicon glyphicon-calendar"></span> </td>
+            <td><input type="text" class="form-control" "TaskFrom.startdate"></td>
+        </tr>
+		 <tr>
+            <td>EndDate <span class=" glyphicon glyphicon-calendar"></span></td>
+            <td><input type="text" class="form-control"  ng-model="TaskFrom.enddate"></td>
+        </tr>
+        <tr>
+            <td>Name  </td>
+            <td><input class="form-control" ng-model="TaskFrom.name"></td>
+        </tr>
+        <tr>
+            <td>numberofparticipants  <span class=" glyphicon glyphicon-user"> </span></td>
+            <td><input class="form-control" type="number" ng-model="TaskFrom.numberofparticipants"></td>
+        </tr>
+		
+		
+        <tr>
+            <td colspan="2" style="text-align:center">
+              
+                
+                
+                 <button type="button" class="btn btn-success btn-xs" ng-click="save()">
+                                        <span class="glyphicon glyphicon-upload"></span> Save
+                                    </button>
+                
+                <button type="button" class="btn btn-danger btn-xs" ng-click="delete()">
+                                        <span class="glyphicon glyphicon-trash"></span> Remove
+                                    </button>
+                <button type="button" class="btn btn-warning btn-xs" ng-click="reset()">
+                                        <span class="glyphicon glyphicon-ban-circle"></span>Reset
+                                    </button>
+            </td>
+            
+        </tr>
+        
+
+         
+       
+        
+        
+    </table>
+</div>
+</div>
